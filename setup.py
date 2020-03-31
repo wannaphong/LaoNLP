@@ -43,7 +43,6 @@ setup(
         "Programming Language :: Python :: 3",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
-        "Natural Language :: Lao",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Text Processing",
         "Topic :: Text Processing :: General",
