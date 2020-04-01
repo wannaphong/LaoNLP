@@ -3,7 +3,7 @@ Lao language NLP
 
 ## Install
 ```
-pip install https://github.com/wannaphong/LaoNLP/archive/master.zip
+pip install laonlp
 ```
 
 Documentation: https://github.com/wannaphong/LaoNLP/wiki
