@@ -1,5 +1,5 @@
 # LaoNLP
-Lao language NLP
+Lao language Natural Language Processing (NLP)
 
 ## Install
 ```
