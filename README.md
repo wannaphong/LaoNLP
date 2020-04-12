@@ -1,4 +1,6 @@
 # LaoNLP
+[![Downloads](https://pepy.tech/badge/laonlp)](https://pepy.tech/project/laonlp)
+
 Lao language Natural Language Processing (NLP)
 
 ## Install
