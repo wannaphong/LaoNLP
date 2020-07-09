@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from laonlp.corpus import laonlp_path
 import os
+from laonlp.corpus import laonlp_path
 corpus_path = os.path.join(laonlp_path, "corpus")
 
 def lao_dictionary()->list:
