@@ -14,4 +14,4 @@ def lo_spellcheckdict()->list:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 def lao_words()->list:
-    return list(set(lo_spellcheckdict()+lo_spellcheckdict()))
+    return list(set(lao_dictionary()+lo_spellcheckdict()+lo_spellcheckdict()))
