@@ -13,5 +13,11 @@ def lo_spellcheckdict()->list:
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
+
+def lo_wannaphongdict()->list:
+    path=os.path.join(corpus_path, "lao-wannaphong.txt")
+    with open(path, "r", encoding="utf-8-sig") as f:
+        return [i.strip() for i in f.readlines() if i[0]!="#"]
+
 def lao_words()->list:
-    return list(set(lao_dictionary()+lo_spellcheckdict()))
+    return list(set(lao_dictionary()+lo_spellcheckdict()+lo_wannaphongdict()))
