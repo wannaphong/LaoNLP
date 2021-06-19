@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+from typing import List
 from pythainlp.tokenize import Tokenizer
 from laonlp.corpus import lao_words
 
 _word = Tokenizer(lao_words(), engine="mm")
 
-def word_tokenize(sent:str)->list:
+
+def word_tokenize(sent: str) -> List[str]:
     """
     Lao word tokenize
 
@@ -14,7 +16,8 @@ def word_tokenize(sent:str)->list:
     """
     return _word.word_tokenize(sent)
 
-def sent_tokenize(txt:str)->list:
+
+def sent_tokenize(txt: str) -> List[str]:
     """
     Sentence tokenizer.
 

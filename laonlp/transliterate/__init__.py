@@ -97,7 +97,7 @@ def lao2thai_script(text: str)->str:
     return new_text
 
 
-def thai2lao_script(text: str)->str:
+def thai2lao_script(text: str) -> str:
     """
     Thai to Lao script
 
