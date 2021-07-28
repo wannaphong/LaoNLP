@@ -9,7 +9,7 @@ requirements = [
 ]
 setup(
     name="LaoNLP",
-    version="0.2-dev2",
+    version="0.2-dev3",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -20,9 +20,8 @@ setup(
     test_suite="tests",
     python_requires=">=3.6",
     package_data={
-        "laonlp.corpus": [
-            "Lao-Dictionary.txt",
-            "lo_spellcheck_dict.txt"
+        "laonlp": [
+            "corpus/*",
         ]
     },
     install_requires=requirements,
