@@ -23,5 +23,11 @@ def lo_wannaphongdict() -> List[str]:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
+def lo_wiktionarydict() -> List[str]:
+    path=os.path.join(corpus_path, "wiktionary-20210720.txt")
+    with open(path, "r", encoding="utf-8-sig") as f:
+        return [i.strip() for i in f.readlines() if i[0]!="#"]
+
+
 def lao_words() -> List[str]:
-    return list(set(lao_dictionary()+lo_spellcheckdict()+lo_wannaphongdict()))
+    return list(set(lao_dictionary()+lo_spellcheckdict()+lo_wannaphongdict()+lo_wiktionarydict()))
