@@ -3,6 +3,7 @@ import csv
 import os
 
 from laonlp.corpus import laonlp_path
+from collections import defaultdict
 corpus_path = os.path.join(laonlp_path, "corpus", "lao-eng-dictionary.csv")
 list_data=[]
 with open(corpus_path,encoding="utf-8-sig") as csvfile:
@@ -11,29 +12,29 @@ with open(corpus_path,encoding="utf-8-sig") as csvfile:
         list_data.append(row)
 
 
-def get_lao_eng():
-    _w = {}
+def get_lao_eng()->dict:
+    _w = defaultdict(list)
     for i in list_data:
-        _w[i['LaoWord']] = i['English']
+        _w[i['LaoWord']].append(i['English'])
     return _w
 
 
-def get_eng_lao():
-    _w = {}
+def get_eng_lao()->dict:
+    _w = defaultdict(list)
     for i in list_data:
-        _w[i['English']] = i['LaoWord']
+        _w[i['English']].append(i['LaoWord'])
     return _w
 
 
-def get_pronunciation():
-    _w = {}
+def get_pronunciation()->dict:
+    _w = defaultdict(list)
     for i in list_data:
-        _w[i['LaoWord']] = i['Pronunciation']
+        _w[i['LaoWord']].append(i['Pronunciation'])
     return _w
 
 
-def get_type():
-    _w = {}
+def get_type()->dict:
+    _w = defaultdict(list)
     for i in list_data:
-        _w[i['LaoWord']] = i['Type']
+        _w[i['LaoWord']].append(i['Type'])
     return _w
