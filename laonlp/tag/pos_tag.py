@@ -3,7 +3,7 @@ from typing import List, Tuple
 from laonlp.corpus import get_path_corpus
 from pythainlp.tag import PerceptronTagger
 
-_FILENAME = "ptagger_kashgari_corpus.json"
+_FILENAME = "ptagger_SeqLabeling_corpus.json"
 _PATH = get_path_corpus(_FILENAME)
 _TAGGER = PerceptronTagger(path=_PATH)
 
@@ -11,7 +11,7 @@ _TAGGER = PerceptronTagger(path=_PATH)
 def pos_tag(
     words: List[str],
     engine: str = "perceptron",
-    corpus: str = "kashgari"
+    corpus: str = "SeqLabeling"
 ) -> List[Tuple[str, str]]:
     """
     Lao Part-of-speech
