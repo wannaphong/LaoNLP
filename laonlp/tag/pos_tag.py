@@ -23,6 +23,15 @@ def pos_tag(
     :param str corpus: kashgari (corpus from https://github.com/FoVNull/SeqLabeling)
 
     :return: a list of tuples (word, POS tag)
-    :rtype: list[tuple[str, str]]
+    :rtype: List[tuple[str, str]]
+
+    :Example:
+    ::
+        from laonlp.tokenize import word_tokenize
+        from laonlp.tag import pos_tag
+
+        sent = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.")
+        pos_tag(sent)
+        # output: [('ພາສາລາວ', 'N'), ('ໃນ', 'PRE'), ('ປັດຈຸບັນ', 'ADJ'), ('.', 'PUNCT')]
     """
     return _TAGGER.tag(words)
