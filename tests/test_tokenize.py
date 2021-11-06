@@ -3,6 +3,7 @@
 import unittest
 from laonlp.tokenize import word_tokenize, sent_tokenize
 
+
 class TestTokenizePackage(unittest.TestCase):
     def test_word_tokenize(self):
         self.assertIsNotNone(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ."))
