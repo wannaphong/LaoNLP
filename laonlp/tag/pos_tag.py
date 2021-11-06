@@ -20,7 +20,7 @@ def pos_tag(
 
     :param List[str] words:  a list of tokenized lao words
     :param str engine: engine of pos_tag (perceptron engine)
-    :param str corpus: kashgari (corpus from https://github.com/FoVNull/SeqLabeling)
+    :param str corpus: SeqLabeling (corpus from https://github.com/FoVNull/SeqLabeling)
 
     :return: a list of tuples (word, POS tag)
     :rtype: List[tuple[str, str]]
