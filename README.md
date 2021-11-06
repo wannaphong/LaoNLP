@@ -4,6 +4,15 @@
 
 Lao language Natural Language Processing (NLP)
 
+## Features
+
+- Word tokenizer
+- Sentence tokenizer
+- Part-of-speech (new)
+- Lao to Thai script
+- Thai to Lao script
+- Word dictionary
+
 ## Install
 ```
 pip install laonlp

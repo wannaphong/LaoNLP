@@ -9,7 +9,7 @@ requirements = [
 ]
 setup(
     name="LaoNLP",
-    version="0.4",
+    version="0.5",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
