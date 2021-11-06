@@ -92,7 +92,17 @@
 <dd class="field-even"><p>a list of tuples (word, POS tag)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list[tuple[str, str]]</p>
+<dd class="field-odd"><p>List[tuple[str, str]]</p>
+</dd>
+<dt class="field-even">Example</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<dl>
+<dt>::</dt><dd><p>from laonlp.tokenize import word_tokenize
+from laonlp.tag import pos_tag</p>
+<p>sent = word_tokenize(“ພາສາລາວໃນປັດຈຸບັນ.”)
+pos_tag(sent)
+# output: [(‘ພາສາລາວ’, ‘N’), (‘ໃນ’, ‘PRE’), (‘ປັດຈຸບັນ’, ‘ADJ’), (‘.’, ‘PUNCT’)]</p>
 </dd>
 </dl>
 </dd></dl>
