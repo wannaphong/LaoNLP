@@ -11,5 +11,7 @@ __all__ = [
     "lao_dictionary",
     "lo_spellcheckdict",
     "lao_words",
+    "lo_wannaphongdict",
+    "lo_wiktionarydict",
     "get_path_corpus"
 ]
