@@ -2,6 +2,7 @@
 from laonlp.tokenize import *
 from laonlp.corpus import *
 from laonlp.transliterate import *
+from laonlp.tag import pos_tag
 
 TONE_MARKS = "່້"+"໊໋"
 CONSONANTS = "ກຂຄງຈສຊຍດຕຖທນບປຜຝພຟມຢຣລວຫອຮ"
