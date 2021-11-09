@@ -1,33 +1,49 @@
 # -*- coding: utf-8 -*-
 import os
 from typing import List
-from laonlp.corpus import laonlp_path
-corpus_path = os.path.join(laonlp_path, "corpus")
+from typing import FrozenSet
+from laonlp.corpus.core import get_path_corpus
 
 
 def lao_dictionary() -> List[str]:
-    path=os.path.join(corpus_path, "Lao-Dictionary.txt")
+    path = get_path_corpus("Lao-Dictionary.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
-def lo_spellcheckdict() -> List[str]:
-    path=os.path.join(corpus_path, "lo_spellcheck_dict.txt")
+def lao_spellcheckdict() -> List[str]:
+    path = get_path_corpus("lo_spellcheck_dict.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
-def lo_wannaphongdict() -> List[str]:
-    path=os.path.join(corpus_path, "lao-wannaphong.txt")
+def lao_wannaphongdict() -> List[str]:
+    path = get_path_corpus("lao-wannaphong.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
-def lo_wiktionarydict() -> List[str]:
-    path=os.path.join(corpus_path, "wiktionary-20210720.txt")
+def lao_wiktionarydict() -> List[str]:
+    path = get_path_corpus("wiktionary-20210720.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
 def lao_words() -> List[str]:
-    return list(set(lao_dictionary()+lo_spellcheckdict()+lo_wannaphongdict()+lo_wiktionarydict()))
+    return list(set(lao_dictionary()+lao_spellcheckdict()+lao_wannaphongdict()+lao_wiktionarydict()))
+
+
+def lao_stopwords() -> FrozenSet[str]:
+    """
+    Lao stopword list
+
+    Return a frozenset of Lao stopwords
+
+    :return: :class:`frozenset` containing stopwords.
+    :rtype: :class:`frozenset`
+    """
+    path = get_path_corpus("stopwords_lao.txt")
+    with open(path, "r", encoding="utf-8-sig") as fh:
+        lines = fh.read().splitlines()
+    lines = [line.strip() for line in lines if line.startswith("#") == False]
+    return frozenset(filter(None, lines))

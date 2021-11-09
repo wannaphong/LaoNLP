@@ -9,9 +9,10 @@ from laonlp.corpus.core import get_path_corpus
 
 __all__ = [
     "lao_dictionary",
-    "lo_spellcheckdict",
+    "lao_spellcheckdict",
     "lao_words",
-    "lo_wannaphongdict",
-    "lo_wiktionarydict",
-    "get_path_corpus"
+    "lao_wannaphongdict",
+    "lao_wiktionarydict",
+    "get_path_corpus",
+    "lao_stopwords"
 ]
