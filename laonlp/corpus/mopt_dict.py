@@ -4,7 +4,8 @@ import os
 
 from laonlp.corpus import laonlp_path
 from collections import defaultdict
-corpus_path = os.path.join(laonlp_path, "corpus", "lao-eng-dictionary.csv")
+from laonlp.corpus.core import get_path_corpus
+corpus_path = get_path_corpus("lao-eng-dictionary.csv")
 list_data=[]
 with open(corpus_path,encoding="utf-8-sig") as csvfile:
     reader = csv.DictReader(csvfile)
