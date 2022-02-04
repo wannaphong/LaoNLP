@@ -9,4 +9,4 @@ class TestTagPackage(unittest.TestCase):
     def test_pos_tag(self):
         self.assertIsNotNone(pos_tag(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.")))
         self.assertIsNotNone(pos_tag(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ."), corpus="SeqLabeling"))
-        self.assertIsNotNone(pos_tag(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ."), corpus="yunshan_cup2021"))
+        self.assertIsNotNone(pos_tag(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ."), corpus="yunshan_cup_2020"))

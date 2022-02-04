@@ -16,7 +16,7 @@ def pos_tag(
 
     :param List[str] words:  a list of tokenized lao words
     :param str engine: engine of pos_tag (perceptron engine)
-    :param str corpus: SeqLabeling (corpus from https://github.com/FoVNull/SeqLabeling) or yunshan_cup2021 (corpus from https://github.com/GKLMIP/Yunshan-Cup-2020)
+    :param str corpus: SeqLabeling (corpus from https://github.com/FoVNull/SeqLabeling) or yunshan_cup_2020 (corpus from https://github.com/GKLMIP/Yunshan-Cup-2020)
 
     :return: a list of tuples (word, POS tag)
     :rtype: List[tuple[str, str]]
@@ -30,7 +30,7 @@ def pos_tag(
         pos_tag(sent)
         # output: [('ພາສາລາວ', 'N'), ('ໃນ', 'PRE'), ('ປັດຈຸບັນ', 'ADJ'), ('.', 'PUNCT')]
     """
-    if corpus == "yunshan_cup2021":
+    if corpus == "yunshan_cup_2020":
         _FILENAME = "ptagger_Yunshan-Cup_corpus.json"
     else:
         _FILENAME = "ptagger_SeqLabeling_corpus.json"
