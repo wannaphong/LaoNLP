@@ -9,10 +9,11 @@ Lao language Natural Language Processing (NLP)
 
 - Word tokenizer
 - Sentence tokenizer
-- Part-of-speech (new)
+- Part-of-speech
 - Lao to Thai script
 - Thai to Lao script
 - Word dictionary
+- Word Vector (**New**)
 
 ## Install
 ```
@@ -46,7 +47,7 @@ or BibTeX entry:
 ## License
 
 ```
-   Copyright 2020 Wannaphong Phatthiyaphaibun
+   Copyright 2020 - 2022 Wannaphong Phatthiyaphaibun
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
