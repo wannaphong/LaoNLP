@@ -21,13 +21,14 @@ def pos_tag(
     :return: a list of tuples (word, POS tag)
     :rtype: List[tuple[str, str]]
 
-    :Example:::
-        from laonlp.tokenize import word_tokenize
-        from laonlp.tag import pos_tag
+    :Example:
+    ::
+            from laonlp.tokenize import word_tokenize
+            from laonlp.tag import pos_tag
 
-        sent = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.")
-        pos_tag(sent)
-        # output: [('ພາສາລາວ', 'N'), ('ໃນ', 'PRE'), ('ປັດຈຸບັນ', 'ADJ'), ('.', 'PUNCT')]
+            sent = word_tokenize("ພາສາລາວໃນປັດຈຸບັນ.")
+            pos_tag(sent)
+            # output: [('ພາສາລາວ', 'N'), ('ໃນ', 'PRE'), ('ປັດຈຸບັນ', 'ADJ'), ('.', 'PUNCT')]
     """
     if corpus == "yunshan_cup_2020":
         _FILENAME = "ptagger_Yunshan-Cup_corpus.json"
