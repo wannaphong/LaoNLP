@@ -30,7 +30,7 @@ Wannaphong Phatthiyaphaibun. (2022). LaoNLP: Lao language Natural Language Proce
 
 or BibTeX entry:
 
-```
+``` bib
 @misc{wannaphong_phatthiyaphaibun_2022_6830778,
   author       = {Wannaphong Phatthiyaphaibun},
   title        = {LaoNLP: Lao language Natural Language Processing},
