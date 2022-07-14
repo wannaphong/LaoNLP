@@ -4,12 +4,12 @@ from setuptools import find_packages, setup
 with open("README.md","r",encoding="utf-8-sig") as f:
     readme = f.read()
 
-requirements = [
-    "pythainlp>=2.1.0"
-]
+with open("requirements.txt","r",encoding="utf-8-sig") as f:
+    requirements = [i.strip() for i in f.readlines()]
+
 setup(
     name="LaoNLP",
-    version="0.6",
+    version="0.7",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
