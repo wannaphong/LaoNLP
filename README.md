@@ -20,6 +20,29 @@ pip install laonlp
 
 Documentation: https://github.com/wannaphong/LaoNLP/wiki
 
+## Citations
+
+If you use `LaoNLP` in your project or publication, please cite the library as follows
+
+```
+Wannaphong Phatthiyaphaibun. (2022). LaoNLP: Lao language Natural Language Processing. Zenodo. https://doi.org/10.5281/zenodo.6830778
+```
+
+or BibTeX entry:
+
+```
+@misc{wannaphong_phatthiyaphaibun_2022_6830778,
+  author       = {Wannaphong Phatthiyaphaibun},
+  title        = {LaoNLP: Lao language Natural Language Processing},
+  month        = jul,
+  year         = 2022,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.6830778},
+  url          = {https://doi.org/10.5281/zenodo.6830778}
+}
+
+```
+
 ## License
 
 ```
