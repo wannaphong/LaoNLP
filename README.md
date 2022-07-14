@@ -1,7 +1,7 @@
 # LaoNLP
 <a href="https://www.buymeacoffee.com/wannaphong"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 [![Downloads](https://pepy.tech/badge/laonlp)](https://pepy.tech/project/laonlp)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6830778.svg)](https://doi.org/10.5281/zenodo.6830778)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6833407.svg)](https://doi.org/10.5281/zenodo.6833407)
 
 Lao language Natural Language Processing (NLP)
 
@@ -26,22 +26,21 @@ Documentation: https://github.com/wannaphong/LaoNLP/wiki
 If you use `LaoNLP` in your project or publication, please cite the library as follows
 
 ```
-Wannaphong Phatthiyaphaibun. (2022). LaoNLP: Lao language Natural Language Processing. Zenodo. https://doi.org/10.5281/zenodo.6830778
+Wannaphong Phatthiyaphaibun. (2022). LaoNLP: Lao language Natural Language Processing. Zenodo. https://doi.org/10.5281/zenodo.6833407
 ```
 
 or BibTeX entry:
 
 ``` bib
-@misc{wannaphong_phatthiyaphaibun_2022_6830778,
+@misc{wannaphong_phatthiyaphaibun_2022_6833407,
   author       = {Wannaphong Phatthiyaphaibun},
   title        = {LaoNLP: Lao language Natural Language Processing},
   month        = jul,
   year         = 2022,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.6830778},
-  url          = {https://doi.org/10.5281/zenodo.6830778}
+  doi          = {10.5281/zenodo.6833407},
+  url          = {https://doi.org/10.5281/zenodo.6833407}
 }
-
 ```
 
 ## License

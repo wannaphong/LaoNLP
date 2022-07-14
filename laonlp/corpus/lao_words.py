@@ -6,12 +6,18 @@ from laonlp.corpus.core import get_path_corpus
 
 
 def lao_dictionary() -> List[str]:
+    """
+    This file comes from Brian Eugene Wilson, Robert Martin Campbell.
+    """
     path = get_path_corpus("Lao-Dictionary.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
 
 
 def lao_spellcheckdict() -> List[str]:
+    """
+    Lao spell check dictionary
+    """
     path = get_path_corpus("lo_spellcheck_dict.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
@@ -24,6 +30,9 @@ def lao_wannaphongdict() -> List[str]:
 
 
 def lao_wiktionarydict() -> List[str]:
+    """
+    This dictionary comes from Wiktionary on 20 July 2021.
+    """
     path = get_path_corpus("wiktionary-20210720.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
         return [i.strip() for i in f.readlines() if i[0]!="#"]
