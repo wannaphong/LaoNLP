@@ -15,14 +15,13 @@ def pos_tag(
     We use lao corpus from https://github.com/FoVNull/SeqLabeling
 
     :param List[str] words:  a list of tokenized lao words
-    :param str engine: engine of pos_tag (perceptron engine)
+    :param str engine: engine of pos_tag (`perceptron` engine)
     :param str corpus: SeqLabeling (corpus from https://github.com/FoVNull/SeqLabeling) or yunshan_cup_2020 (corpus from https://github.com/GKLMIP/Yunshan-Cup-2020)
 
     :return: a list of tuples (word, POS tag)
     :rtype: List[tuple[str, str]]
 
-    :Example:
-    ::
+    :Example:::
         from laonlp.tokenize import word_tokenize
         from laonlp.tag import pos_tag
 
