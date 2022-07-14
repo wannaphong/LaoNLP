@@ -1,7 +1,7 @@
-.. currentmodule:: laonlp.word_dictionary
+.. currentmodule:: laonlp.translate
 
-laonlp.word_dictionary
-======================
+laonlp.translate
+================
 
 Modules
 -------
