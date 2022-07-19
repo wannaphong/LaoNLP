@@ -14,7 +14,7 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     author="Wannaphong",
-    author_email="wannaphong@kkumail.com",
+    author_email="wannaphong@yahoo.com",
     url="https://github.com/wannaphong/laonlp",
     packages=find_packages(),
     test_suite="tests",
