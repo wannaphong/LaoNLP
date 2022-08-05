@@ -9,7 +9,7 @@ TONE_MARKS = "່້"+"໊໋"
 CONSONANTS = "ກຂຄງຈສຊຍດຕຖທນບປຜຝພຟມຢຣລວຫອຮ"
 VOWELS_COMBINING = "ັ"+"ິີ"+"ຶືຸ"+"ູົໍ"
 VOWELS = "ະັາ"+"ຳິີ"+"ຶືຸ"+"ູົຼ"+"ຽເແ"+"ໂໃໄ"+"ໍ"
-NUMBERS = "໑໒໓໔໕໖໗໘໙໐"
+NUMBERS = "໑໒໓໔໕໖໗໘໙໐" # 1234567890
 # This is Obsolete consonants.
 # You can read at https://en.wikipedia.org/wiki/Lao_script
 lao_obsolete_consonants_mapping_thai = {
