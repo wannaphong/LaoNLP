@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>laonlp.tokenize &mdash; LaoNLP  documentation</title>
+  <title>laonlp.util &mdash; LaoNLP  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="laonlp.transliterate" href="transliterate.html" />
-    <link rel="prev" title="laonlp.tag" href="tag.html" /> 
+    <link rel="next" title="laonlp.translate" href="word_dictionary.html" />
+    <link rel="prev" title="laonlp.transliterate" href="transliterate.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,12 +42,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="corpus.html">laonlp.corpus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tag.html">laonlp.tag</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">laonlp.tokenize</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="tokenize.html">laonlp.tokenize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transliterate.html">laonlp.transliterate</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">laonlp.util</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transliterate.html">laonlp.transliterate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">laonlp.util</a></li>
 <li class="toctree-l1"><a class="reference internal" href="word_dictionary.html">laonlp.translate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="word_vector.html">laonlp.word_vector</a></li>
 </ul>
@@ -66,7 +66,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>laonlp.tokenize</li>
+      <li>laonlp.util</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -75,41 +75,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="laonlp-tokenize">
-<h1>laonlp.tokenize<a class="headerlink" href="#laonlp-tokenize" title="Permalink to this heading"></a></h1>
+  <section id="laonlp-util">
+<h1>laonlp.util<a class="headerlink" href="#laonlp-util" title="Permalink to this heading"></a></h1>
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="laonlp.tokenize.word_tokenize">
-<span class="sig-prename descclassname"><span class="pre">laonlp.tokenize.</span></span><span class="sig-name descname"><span class="pre">word_tokenize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#laonlp.tokenize.word_tokenize" title="Permalink to this definition"></a></dt>
-<dd><p>Lao word tokenize</p>
+<dt class="sig sig-object py" id="laonlp.util.lao_digit_to_arabic_digit">
+<span class="sig-prename descclassname"><span class="pre">laonlp.util.</span></span><span class="sig-name descname"><span class="pre">lao_digit_to_arabic_digit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.util.lao_digit_to_arabic_digit" title="Permalink to this definition"></a></dt>
+<dd><p>Lao digit to Arabic digit</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sent</strong> (<em>str</em>) – lao text</p>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – lao digit text</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>returns a list of lao words</p>
+<dd class="field-even"><p>returns a string of Arabic digit</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="laonlp.tokenize.sent_tokenize">
-<span class="sig-prename descclassname"><span class="pre">laonlp.tokenize.</span></span><span class="sig-name descname"><span class="pre">sent_tokenize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#laonlp.tokenize.sent_tokenize" title="Permalink to this definition"></a></dt>
-<dd><p>Sentence tokenizer.</p>
-<p>Lao Text to sentence</p>
+<dt class="sig sig-object py" id="laonlp.util.arabic_digit_to_lao_digit">
+<span class="sig-prename descclassname"><span class="pre">laonlp.util.</span></span><span class="sig-name descname"><span class="pre">arabic_digit_to_lao_digit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.util.arabic_digit_to_lao_digit" title="Permalink to this definition"></a></dt>
+<dd><p>Arabic digit to Lao digit</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sent</strong> (<em>str</em>) – lao text</p>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – Arabic digit text</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>returns a list of lao sentence</p>
+<dd class="field-even"><p>returns a string of Lao digit</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -121,8 +120,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tag.html" class="btn btn-neutral float-left" title="laonlp.tag" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="transliterate.html" class="btn btn-neutral float-right" title="laonlp.transliterate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="transliterate.html" class="btn btn-neutral float-left" title="laonlp.transliterate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="word_dictionary.html" class="btn btn-neutral float-right" title="laonlp.translate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
