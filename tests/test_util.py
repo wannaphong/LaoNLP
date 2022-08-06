@@ -15,3 +15,8 @@ class TestTagPackage(unittest.TestCase):
             arabic_digit_to_lao_digit('1234567890'),
             "໑໒໓໔໕໖໗໘໙໐"
         )
+    def test_remove_tone_mark(self):
+        self.assertEqual(
+            remove_tone_mark("ຜູ້"),
+            'ຜູ'
+        )
