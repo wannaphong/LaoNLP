@@ -10,6 +10,7 @@ CONSONANTS = "ກຂຄງຈສຊຍດຕຖທນບປຜຝພຟມຢຣ
 VOWELS_COMBINING = "ັ"+"ິີ"+"ຶືຸ"+"ູົໍ"
 VOWELS = "ະັາ"+"ຳິີ"+"ຶືຸ"+"ູົຼ"+"ຽເແ"+"ໂໃໄ"+"ໍ"
 NUMBERS = "໑໒໓໔໕໖໗໘໙໐" # 1234567890
+CANCELLATION_MARK = "\u0ECC"
 # This is Obsolete consonants.
 # You can read at https://en.wikipedia.org/wiki/Lao_script
 lao_obsolete_consonants_mapping_thai = {
