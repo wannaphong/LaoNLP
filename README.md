@@ -2,6 +2,7 @@
 [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/wannaphong/)](https://github.com/sponsors/wannaphong/)
 [![Downloads](https://pepy.tech/badge/laonlp)](https://pepy.tech/project/laonlp)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6833407.svg)](https://doi.org/10.5281/zenodo.6833407)
+[![Coverage Status](https://coveralls.io/repos/github/wannaphong/LaoNLP/badge.svg?branch=master)](https://coveralls.io/github/wannaphong/LaoNLP?branch=master)
 
 Lao language Natural Language Processing (NLP)
 
