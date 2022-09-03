@@ -5,9 +5,15 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
   pull_request:
-    branches: [ master ]
+    branches:
+      - dev
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
 
 jobs:
   build:
