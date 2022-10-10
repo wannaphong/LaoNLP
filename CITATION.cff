@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Phatthiyaphaibun"
+  given-names: "Wannaphong"
+  orcid: "https://orcid.org/0000-0002-4153-4354"
+title: "LaoNLP: Lao language Natural Language Processing"
+doi: 10.5281/zenodo.6833407
+date-released: 2022-07-14
+url: "https://doi.org/10.5281/zenodo.6833407"
