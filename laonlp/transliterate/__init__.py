@@ -135,7 +135,7 @@ def transliterate(lao_word: str, engine:str="anyascii")->str:
     Lao transliterate
 
     :param str sent: Lao text
-	:param str engine: engine. Now, LaoNLP support anyascii only.
+    :param str engine: engine. Now, LaoNLP support anyascii only.
     :return: returns a Lao transliteration.
     :rtype: str
     """
