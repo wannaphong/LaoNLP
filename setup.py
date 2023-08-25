@@ -24,7 +24,7 @@ with open("requirements.txt","r",encoding="utf-8-sig") as f:
 
 setup(
     name="LaoNLP",
-    version="1.0",
+    version="1.1",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
