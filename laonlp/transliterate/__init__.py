@@ -18,8 +18,10 @@ __all__ = [
     "lao2thai_script",
     "thai2lao_script",
     "lao2thai_transliteration",
-    "thai2lao_transliteration"
+    "thai2lao_transliteration",
+	"transliterate"
 ]
+from anyascii import anyascii
 
 # Naive Lao script to Thai script transliteration.
 # Data from https://github.com/google/language-resources/blob/master/lo/Laoo-Thai.txt
@@ -127,3 +129,14 @@ def thai2lao_script(text: str) -> str:
         else:
             new_text += c
     return new_text
+
+def transliterate(lao_word: str, engine:str="anyascii")->str:
+	"""
+    Lao transliterate
+
+    :param str sent: Lao text
+	:param str engine: engine. Now, LaoNLP support anyascii only.
+    :return: returns a Lao transliteration.
+    :rtype: str
+    """
+	return anyascii(lao_word)
