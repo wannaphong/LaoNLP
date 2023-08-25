@@ -14,7 +14,7 @@ Lao language Natural Language Processing (NLP)
 - Lao to Thai script
 - Thai to Lao script
 - Word dictionary
-- Word Vector (**New**)
+- Word Vector
 
 ## Install
 ```
