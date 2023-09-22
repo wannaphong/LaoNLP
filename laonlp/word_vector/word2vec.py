@@ -15,9 +15,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 from typing import List
-import gensim
-from huggingface_hub import hf_hub_download
 
+try:
+    import gensim
+except ModuleNotFoundError:
+    raise ModuleNotFoundError('Word vector functionalities require gensim which is not currently installed. Please try installing the package via "pip install gensim".')
+try:
+    from huggingface_hub import hf_hub_download
+except ModuleNotFoundError:
+    raise ModuleNotFoundError('Word vector functionalities require huggingface_hub which is not currently installed. Please try installing the package via "pip install huggingface_hub".')
 
 class Word2Vec:
     """

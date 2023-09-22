@@ -21,7 +21,10 @@ __all__ = [
     "thai2lao_transliteration",
 	"transliterate"
 ]
-from anyascii import anyascii
+try:
+    from anyascii import anyascii
+except ModuleNotFoundError:
+    raise ModuleNotFoundError('The anyascii engine of Lao transliteration functionalities require AnyAscii which is not currently installed. Please try installing the package via "pip install anyascii".')
 
 # Naive Lao script to Thai script transliteration.
 # Data from https://github.com/google/language-resources/blob/master/lo/Laoo-Thai.txt

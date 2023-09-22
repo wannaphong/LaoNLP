@@ -22,6 +22,16 @@ with open("README.md","r",encoding="utf-8-sig") as f:
 with open("requirements.txt","r",encoding="utf-8-sig") as f:
     requirements = [i.strip() for i in f.readlines()]
 
+extras = {
+    "anyascii": ["anyascii>=0.3.2"],
+    "word_vector": ["gensim", "huggingface-hub"],
+    "full": [
+        "anyascii>=0.3.2",
+        "gensim",
+        "huggingface-hub"
+    ]
+}
+
 setup(
     name="LaoNLP",
     version="1.1",
@@ -40,6 +50,7 @@ setup(
         ]
     },
     install_requires=requirements,
+    extras_require=extras,
     license="Apache Software License 2.0",
     zip_safe=False,
     keywords=[
