@@ -50,7 +50,18 @@
 <li class="toctree-l1"><a class="reference internal" href="transliterate.html">laonlp.transliterate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">laonlp.util</a></li>
 <li class="toctree-l1"><a class="reference internal" href="word_dictionary.html">laonlp.translate</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">laonlp.word_vector</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">laonlp.word_vector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#laonlp.word_vector.Word2Vec"><code class="docutils literal notranslate"><span class="pre">Word2Vec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.__init__"><code class="docutils literal notranslate"><span class="pre">Word2Vec.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.load_model"><code class="docutils literal notranslate"><span class="pre">Word2Vec.load_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.get_model"><code class="docutils literal notranslate"><span class="pre">Word2Vec.get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.doesnt_match"><code class="docutils literal notranslate"><span class="pre">Word2Vec.doesnt_match()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.most_similar_cosmul"><code class="docutils literal notranslate"><span class="pre">Word2Vec.most_similar_cosmul()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.word_vector.Word2Vec.similarity"><code class="docutils literal notranslate"><span class="pre">Word2Vec.similarity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -78,6 +89,83 @@
              
   <section id="laonlp-word-vector">
 <h1>laonlp.word_vector<a class="headerlink" href="#laonlp-word-vector" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laonlp.word_vector.</span></span><span class="sig-name descname"><span class="pre">Word2Vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'oscar'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laonlp.word_vector.Word2Vec" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'oscar'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>str</em>) – model name (cbow or skip-gram)</p></li>
+<li><p><strong>corpus</strong> (<em>str</em>) – corpus name (oscar)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.load_model" title="Permalink to this definition"></a></dt>
+<dd><p>Load Word2Vec model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>str</em>) – model name (cbow or skip-gram)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.get_model" title="Permalink to this definition"></a></dt>
+<dd><p>Get gensim.models.keyedvectors.KeyedVectors class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.doesnt_match">
+<span class="sig-name descname"><span class="pre">doesnt_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.doesnt_match" title="Permalink to this definition"></a></dt>
+<dd><p>Get donesn’t match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>words</strong> (<em>list</em>) – list words</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>return word that donesn’t match.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.most_similar_cosmul">
+<span class="sig-name descname"><span class="pre">most_similar_cosmul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.most_similar_cosmul" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laonlp.word_vector.Word2Vec.similarity">
+<span class="sig-name descname"><span class="pre">similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#laonlp.word_vector.Word2Vec.similarity" title="Permalink to this definition"></a></dt>
+<dd><p>Find similarity between word pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word1</strong> (<em>str</em>) – first word</p></li>
+<li><p><strong>word2</strong> (<em>str</em>) – second word</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>return similarity</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
