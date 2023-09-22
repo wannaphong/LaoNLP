@@ -21,6 +21,24 @@ Lao language Natural Language Processing (NLP)
 pip install laonlp
 ```
 
+### Installation Options
+
+Some functionalities, like word vectors, may require extra packages. To install those requirements, specify a set of `[name]` immediately after `laonlp`:
+
+```
+pip install laonlp[extra1,extra2,...]
+```
+
+<details>
+  <summary>List of possible <code>extras</code></summary>
+
+- `full` (install everything)
+- `anyascii` (for support of the `anyascii` engine of Lao transliteration functionalities)
+- `word_vector` (for support of word vector functionalities)
+</details>
+
+For dependency details, look at `extras` variable in [`setup.py`](https://github.com/wannaphong/LaoNLP/blob/master/setup.py).
+
 Documentation: https://github.com/wannaphong/LaoNLP/wiki
 
 ## Citations
