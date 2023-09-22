@@ -49,12 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tag.html">laonlp.tag</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tokenize.html">laonlp.tokenize</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">laonlp.transliterate</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#laonlp.transliterate.lao2thai_script"><code class="docutils literal notranslate"><span class="pre">lao2thai_script()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#laonlp.transliterate.thai2lao_script"><code class="docutils literal notranslate"><span class="pre">thai2lao_script()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#laonlp.transliterate.transliterate"><code class="docutils literal notranslate"><span class="pre">transliterate()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">laonlp.util</a></li>
@@ -89,60 +84,6 @@
 <h1>laonlp.transliterate<a class="headerlink" href="#laonlp-transliterate" title="Permalink to this heading"></a></h1>
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="laonlp.transliterate.lao2thai_script">
-<span class="sig-prename descclassname"><span class="pre">laonlp.transliterate.</span></span><span class="sig-name descname"><span class="pre">lao2thai_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.transliterate.lao2thai_script" title="Permalink to this definition"></a></dt>
-<dd><p>Lao to Thai script</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sent</strong> (<em>str</em>) – lao text</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>returns a string of thai script</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="laonlp.transliterate.thai2lao_script">
-<span class="sig-prename descclassname"><span class="pre">laonlp.transliterate.</span></span><span class="sig-name descname"><span class="pre">thai2lao_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.transliterate.thai2lao_script" title="Permalink to this definition"></a></dt>
-<dd><p>Thai to Lao script</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sent</strong> (<em>str</em>) – thai text</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>returns a string of lao script</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="laonlp.transliterate.transliterate">
-<span class="sig-prename descclassname"><span class="pre">laonlp.transliterate.</span></span><span class="sig-name descname"><span class="pre">transliterate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lao_word</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'anyascii'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#laonlp.transliterate.transliterate" title="Permalink to this definition"></a></dt>
-<dd><p>Lao transliterate</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sent</strong> (<em>str</em>) – Lao text</p></li>
-<li><p><strong>engine</strong> (<em>str</em>) – engine. Now, LaoNLP support anyascii only.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>returns a Lao transliteration.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 </section>
 
