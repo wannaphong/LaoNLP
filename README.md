@@ -33,7 +33,6 @@ pip install laonlp[extra1,extra2,...]
   <summary>List of possible <code>extras</code></summary>
 
 - `full` (install everything)
-- `anyascii` (for support of the `anyascii` engine of Lao transliteration functionalities)
 - `word_vector` (for support of word vector functionalities)
 </details>
 
