@@ -29,10 +29,10 @@ _pronunciation = [
     "ສູນ"
 ]
 _dict_lao_arabic = {
-    i:j for i,j in zip(list(NUMBERS), list(_arabic_numerals))
+    i: j for i, j in zip(list(NUMBERS), list(_arabic_numerals))
 }
 _dict_arabic_lao = {
-    i:j for i,j in zip(list(_arabic_numerals), list(NUMBERS))
+    i: j for i, j in zip(list(_arabic_numerals), list(NUMBERS))
 }
 _lao_arabic_table = str.maketrans(_dict_lao_arabic)
 _arabic_lao_table = str.maketrans(_dict_arabic_lao)
@@ -48,6 +48,7 @@ def lao_digit_to_arabic_digit(text: str) -> str:
     """
     return text.translate(_lao_arabic_table)
 
+
 def arabic_digit_to_lao_digit(text: str) -> str:
     """
     Arabic digit to Lao digit
@@ -57,6 +58,7 @@ def arabic_digit_to_lao_digit(text: str) -> str:
     :rtype: str
     """
     return text.translate(_arabic_lao_table)
+
 
 def number2lao(numbers: int):
     """
