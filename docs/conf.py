@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'LaoNLP'
-copyright = u'2020 - 2021, Wannaphong Phatthiyaphaibun'
-author = u'Wannaphong Phatthiyaphaibun'
+project = 'LaoNLP'
+copyright = '2020 - 2021, Wannaphong Phatthiyaphaibun'
+author = 'Wannaphong Phatthiyaphaibun'
 
 # The short X.Y version
-version = u''
+version = ''
 # The full version, including alpha/beta/rc tags
-release = u''
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -133,8 +133,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SphinxGitHubActionTest.tex', u'Sphinx GitHub Action Test Documentation',
-     u'Sean Zheng', 'manual'),
+    (master_doc, 'SphinxGitHubActionTest.tex', 'Sphinx GitHub Action Test Documentation',
+     'Sean Zheng', 'manual'),
 ]
 
 
@@ -143,7 +143,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinxgithubactiontest', u'Sphinx GitHub Action Test Documentation',
+    (master_doc, 'sphinxgithubactiontest', 'Sphinx GitHub Action Test Documentation',
      [author], 1)
 ]
 
@@ -154,7 +154,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SphinxGitHubActionTest', u'Sphinx GitHub Action Test Documentation',
+    (master_doc, 'SphinxGitHubActionTest', 'Sphinx GitHub Action Test Documentation',
      author, 'SphinxGitHubActionTest', 'One line description of project.',
      'Miscellaneous'),
 ]
@@ -185,4 +185,4 @@ autodoc_default_options = {
     'special-members': '__init__',
     'undoc-members': True,
     'exclude-members': '__weakref__'
-} 
+}

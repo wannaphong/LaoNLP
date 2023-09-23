@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 TONE_MARKS = "່້"+"໊໋"
-_tone_mark = str.maketrans({i:None for i in TONE_MARKS})
+_tone_mark = str.maketrans({i: None for i in TONE_MARKS})
 
 
 def remove_tone_mark(text: str) -> str:

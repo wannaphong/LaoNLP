@@ -25,7 +25,7 @@ def lao_dictionary() -> List[str]:
     """
     path = get_path_corpus("Lao-Dictionary.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
-        return [i.strip() for i in f.readlines() if i[0]!="#"]
+        return [i.strip() for i in f.readlines() if i[0] != "#"]
 
 
 def lao_spellcheckdict() -> List[str]:
@@ -34,13 +34,13 @@ def lao_spellcheckdict() -> List[str]:
     """
     path = get_path_corpus("lo_spellcheck_dict.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
-        return [i.strip() for i in f.readlines() if i[0]!="#"]
+        return [i.strip() for i in f.readlines() if i[0] != "#"]
 
 
 def lao_wannaphongdict() -> List[str]:
     path = get_path_corpus("lao-wannaphong.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
-        return [i.strip() for i in f.readlines() if i[0]!="#"]
+        return [i.strip() for i in f.readlines() if i[0] != "#"]
 
 
 def lao_wiktionarydict() -> List[str]:
@@ -49,7 +49,7 @@ def lao_wiktionarydict() -> List[str]:
     """
     path = get_path_corpus("wiktionary-20210720.txt")
     with open(path, "r", encoding="utf-8-sig") as f:
-        return [i.strip() for i in f.readlines() if i[0]!="#"]
+        return [i.strip() for i in f.readlines() if i[0] != "#"]
 
 
 def lao_words() -> List[str]:
@@ -68,5 +68,5 @@ def lao_stopwords() -> FrozenSet[str]:
     path = get_path_corpus("stopwords_lao.txt")
     with open(path, "r", encoding="utf-8-sig") as fh:
         lines = fh.read().splitlines()
-    lines = [line.strip() for line in lines if line.startswith("#") == False]
+    lines = [line.strip() for line in lines if line.startswith("#") is False]
     return frozenset(filter(None, lines))

@@ -14,12 +14,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-from typing import List
-
 from laonlp.corpus import mopt_dict
 
 
-def dictionary(word: str, src: str, target: str)->list:
+def dictionary(word: str, src: str, target: str) -> list:
     if src == "lao" and target == "eng":
         _temp = mopt_dict.get_lao_eng()
         if word not in list(_temp.keys()):
