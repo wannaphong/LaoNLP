@@ -14,6 +14,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
+import re
 from typing import List
 from pythainlp.tokenize import Tokenizer
 from laonlp.corpus import lao_words
@@ -42,4 +43,7 @@ def sent_tokenize(txt: str) -> List[str]:
     :return: returns a list of lao sentence
     :rtype: list
     """
-    return txt.split(".")
+    sentences = []
+    for part in re.split(r"(?<=\.)(?!(?:\.|$))", txt):
+        sentences.append(part.strip())
+    return sentences

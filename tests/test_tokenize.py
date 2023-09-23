@@ -9,4 +9,7 @@ class TestTokenizePackage(unittest.TestCase):
         self.assertIsNotNone(word_tokenize("ພາສາລາວໃນປັດຈຸບັນ."))
 
     def test_sent_tokenize(self):
-        self.assertIsNotNone(sent_tokenize("ພາສາລາວໃນປັດຈຸບັນ.ນະຄອນຫຼວງວຽງຈັນ"))
+        self.assertEqual(
+            sent_tokenize("ພາສາລາວໃນປັດຈຸບັນ.ນະຄອນຫຼວງວຽງຈັນ"),
+            ["ພາສາລາວໃນປັດຈຸບັນ.", "ນະຄອນຫຼວງວຽງຈັນ"]
+        )
