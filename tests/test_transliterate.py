@@ -9,7 +9,7 @@ class TestTransliteratePackage(unittest.TestCase):
         self.assertIsNotNone(lao2thai_script("ພາສາລາວໃນປັດຈຸບັນ."))
 
     def test_thai2lao_script(self):
-        self.assertIsNotNone(thai2lao_script("พาสาลาว"))
+        self.assertIsNotNone(thai2lao_script("พาสาลาว."))
 
     def test_transliterate(self):
-        self.assertEquals(transliterate("ສະຫວັນນະເຂດ"),"sahvannaekhd")
+        self.assertEqual(transliterate("ສະຫວັນນະເຂດ"), "sahvannaekhd")
