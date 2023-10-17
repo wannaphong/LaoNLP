@@ -32,7 +32,7 @@ extras = {
 
 setup(
     name="LaoNLP",
-    version="1.1.2",
+    version="1.1.3",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
