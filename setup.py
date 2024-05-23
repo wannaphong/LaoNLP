@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Copyright 2020 - 2023 Wannaphong Phatthiyaphaibun
+Copyright 2020 - 2024 Wannaphong Phatthiyaphaibun
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ extras = {
 
 setup(
     name="LaoNLP",
-    version="1.1.3",
+    version="1.2.0",
     description="Lao Natural Language Processing library",
     long_description=readme,
     long_description_content_type="text/markdown",
