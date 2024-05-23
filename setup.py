@@ -23,8 +23,9 @@ with open("requirements.txt", "r", encoding="utf-8-sig") as f:
     requirements = [i.strip() for i in f.readlines()]
 
 extras = {
-    "word_vector": ["gensim", "huggingface-hub"],
+    "word_vector": ["scipy<1.11.0", "gensim", "huggingface-hub"],
     "full": [
+        "scipy<1.11.0",
         "gensim",
         "huggingface-hub"
     ]
