@@ -4,9 +4,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6833407.svg)](https://doi.org/10.5281/zenodo.6833407)
 [![Coverage Status](https://coveralls.io/repos/github/wannaphong/LaoNLP/badge.svg?branch=master)](https://coveralls.io/github/wannaphong/LaoNLP?branch=master)
 
-Lao language Natural Language Processing (NLP)
+Lao language Natural Language Processing toolkit
 
-> **Disclaimer:** Project owner are Thai people from Thailand that know Lao language.
+> **Awesome Lao NLP:** [https://github.com/wannaphong/Awesome-Lao-NLP](https://github.com/wannaphong/Awesome-Lao-NLP)
 
 ## Features
 
