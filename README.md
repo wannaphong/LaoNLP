@@ -6,6 +6,8 @@
 
 Lao language Natural Language Processing (NLP)
 
+> **Disclaimer:** Project owner are Thai people from Thailand that know Lao language.
+
 ## Features
 
 - Word tokenizer
