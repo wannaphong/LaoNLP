@@ -38,6 +38,7 @@ def pos_tag(
 
     :Example:
     ::
+
             from laonlp.tokenize import word_tokenize
             from laonlp.tag import pos_tag
 
