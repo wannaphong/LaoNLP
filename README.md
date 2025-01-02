@@ -67,7 +67,7 @@ or BibTeX entry:
 ## License
 
 ```
-   Copyright 2020 - 2024 Wannaphong Phatthiyaphaibun
+   Copyright 2020 - 2025 Wannaphong Phatthiyaphaibun
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
