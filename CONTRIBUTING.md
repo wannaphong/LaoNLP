@@ -16,4 +16,4 @@ If you found the bug, you can create a issues at [https://github.com/wannaphong/
 
 ## Sponsor
 
-You can sponsor me at [https://github.com/sponsors/wannaphong/](https://github.com/sponsors/wannaphong/sponsor).
+You can sponsor me at [https://github.com/sponsors/wannaphong/](https://github.com/sponsors/wannaphong/).
