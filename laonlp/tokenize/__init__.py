@@ -14,36 +14,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-import re
-from typing import List
-from pythainlp.tokenize import Tokenizer
-from laonlp.corpus import lao_words
+from laonlp.tokenize.core import word_tokenize, sent_tokenize
 
-_word = Tokenizer(lao_words(), engine="mm")
-
-
-def word_tokenize(sent: str) -> List[str]:
-    """
-    Lao word tokenize
-
-    :param str sent: lao text
-    :return: returns a list of lao words
-    :rtype: list
-    """
-    return _word.word_tokenize(sent)
-
-
-def sent_tokenize(txt: str) -> List[str]:
-    """
-    Sentence tokenizer.
-
-    Lao Text to sentence
-
-    :param str sent: lao text
-    :return: returns a list of lao sentence
-    :rtype: list
-    """
-    sentences = []
-    for part in re.split(r"(?<=\.)(?!(?:\.|$))", txt):
-        sentences.append(part.strip())
-    return sentences
+__all__ = [
+    "word_tokenize",
+    "sent_tokenize",
+]
