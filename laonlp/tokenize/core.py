@@ -20,6 +20,7 @@ from pythainlp.tokenize import Tokenizer
 from laonlp.corpus import lao_words
 
 _word = Tokenizer(lao_words(), engine="mm")
+_RE_sent = re.compile(r"(?<=\.)(?!(?:\.|$))")
 
 
 def word_tokenize(sent: str) -> List[str]:
@@ -29,6 +30,14 @@ def word_tokenize(sent: str) -> List[str]:
     :param str sent: lao text
     :return: returns a list of lao words
     :rtype: list
+
+    :Example:
+    ::
+
+        from laonlp.tokenize import word_tokenize
+
+        txt= "ພາສາລາວໃນປັດຈຸບັນ."
+        print(word_tokenize(txt)) # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     """
     return _word.word_tokenize(sent)
 
@@ -44,6 +53,6 @@ def sent_tokenize(txt: str) -> List[str]:
     :rtype: list
     """
     sentences = []
-    for part in re.split(r"(?<=\.)(?!(?:\.|$))", txt):
+    for part in _RE_sent.split(txt):
         sentences.append(part.strip())
     return sentences
