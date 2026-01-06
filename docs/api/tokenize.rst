@@ -8,3 +8,4 @@ Modules
 
 .. autofunction:: word_tokenize
 .. autofunction:: sent_tokenize
+.. autofunction:: syllable_tokenize
