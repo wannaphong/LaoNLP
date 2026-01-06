@@ -18,6 +18,7 @@ Lao language Natural Language Processing toolkit
 - Thai to Lao script
 - Word dictionary
 - Word Vector
+- Split Lao text into grapheme clusters (characters with tone marks)
 
 ## Install
 ```
