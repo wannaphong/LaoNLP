@@ -50,6 +50,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#laonlp.tokenize.word_tokenize"><code class="docutils literal notranslate"><span class="pre">word_tokenize()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#laonlp.tokenize.sent_tokenize"><code class="docutils literal notranslate"><span class="pre">sent_tokenize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.tokenize.syllable_tokenize"><code class="docutils literal notranslate"><span class="pre">syllable_tokenize()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -131,6 +132,40 @@
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="laonlp.tokenize.syllable_tokenize">
+<span class="sig-prename descclassname"><span class="pre">laonlp.tokenize.</span></span><span class="sig-name descname"><span class="pre">syllable_tokenize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#laonlp.tokenize.syllable_tokenize" title="Link to this definition"></a></dt>
+<dd><p>Split Lao text into syllables.</p>
+<p>This implements a regular expression based algorithm to segment Lao text
+into syllables, based on the one described in PHISSAMAY et al:
+“Syllabification of Lao Script for Line Breaking”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – Lao text to split into syllables</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – Whether to normalize tone mark order (default: False)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of Lao syllables</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">laonlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">syllable_tokenize</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ສະບາຍດີ&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ສະ&#39;, &#39;ບາຍ&#39;, &#39;ດີ&#39;]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ພາສາລາວໃນປັດຈຸບັນ&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ພາ&#39;, &#39;ສາ&#39;, &#39;ລາວ&#39;, &#39;ໃນ&#39;, &#39;ປັດ&#39;, &#39;ຈຸ&#39;, &#39;ບັນ&#39;]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
