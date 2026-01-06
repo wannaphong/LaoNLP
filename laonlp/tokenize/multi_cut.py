@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Copyright 2020 - 2025 Wannaphong Phatthiyaphaibun
+Copyright 2016 - 2026 PyThaiNLP
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,6 +16,10 @@ limitations under the License.
 
 Multi cut -- Lao word segmentation with maximum matching.
 Forked from PyThaiNLP's multi_cut.py
+
+https://github.com/PyThaiNLP/pythainlp/blob/41ed2c827fcddaece60bd157e69e1bff67a5a839/pythainlp/tokenize/multi_cut.py
+
+and newmm-safe https://github.com/PyThaiNLP/pythainlp/pull/302
 
 Note: This module depends on pythainlp.util.Trie which is a required 
 dependency of LaoNLP (pythainlp>=3.0.0 in requirements.txt).
