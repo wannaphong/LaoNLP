@@ -176,6 +176,97 @@ lao2ascii = str.maketrans({
     "ༀ": "Om",
 })
 
+# Ministry of Health 2020 Romanization System
+# Based on the standardized romanization used in Lao health documentation
+# Reference: https://laoconverter.info/moh2020.html
+lao2moh2020 = str.maketrans({
+    # Consonants
+    "ກ": "k",      # KO
+    "ຂ": "kh",     # KHO KHAI
+    "ຄ": "kh",     # KHO KHUAI
+    "ຆ": "kh",     # (rare)
+    "ງ": "ng",     # NGO
+    "ຈ": "ch",     # CHO
+    "ຉ": "ch",     # (rare)
+    "ຊ": "s",      # SO (palatalized)
+    "ຌ": "ny",     # (rare)
+    "ຍ": "ny",     # NYO
+    "ຎ": "d",      # (rare Sanskrit)
+    "ຏ": "t",      # (rare Sanskrit)
+    "ຐ": "th",     # (rare Sanskrit)
+    "ຑ": "th",     # (rare Sanskrit)
+    "ຒ": "th",     # (rare Sanskrit)
+    "ຓ": "n",      # (rare Sanskrit)
+    "ດ": "d",      # DO
+    "ຕ": "t",      # TO
+    "ຖ": "th",     # THO THUNG
+    "ທ": "th",     # THO THONG
+    "ຘ": "th",     # (rare)
+    "ນ": "n",      # NO
+    "ບ": "b",      # BO
+    "ປ": "p",      # PO
+    "ຜ": "ph",     # PHO PHUNG
+    "ຝ": "f",      # FO FA
+    "ພ": "ph",     # PHO PHEUNG
+    "ຟ": "f",      # FO FAI
+    "ຠ": "ph",     # (rare)
+    "ມ": "m",      # MO
+    "ຢ": "y",      # YO
+    "ຣ": "r",      # RO
+    "ລ": "l",      # LO
+    "ວ": "v",      # VO
+    "ຨ": "s",      # (rare Sanskrit)
+    "ຩ": "s",      # (rare Sanskrit)
+    "ສ": "s",      # SO
+    "ຫ": "h",      # HO
+    "ຬ": "l",      # (rare Sanskrit)
+    "ອ": "o",      # O
+    "ຮ": "h",      # HO (final)
+    # Vowels and vowel signs
+    "ະ": "a",      # short A
+    "ັ": "a",      # mai kan (short A above)
+    "າ": "a",      # long AA
+    "ຳ": "am",     # AM
+    "ິ": "i",      # short I
+    "ີ": "i",      # long II
+    "ຶ": "ue",     # short UE
+    "ື": "ue",     # long UEE
+    "ຸ": "u",      # short U
+    "ູ": "u",      # long UU
+    "ົ": "o",      # mai kong
+    "ຼ": "l",      # semivowel L
+    "ຽ": "ia",     # IA
+    "ເ": "e",      # E (before consonant)
+    "ແ": "ae",     # AE (before consonant)
+    "ໂ": "o",      # O (before consonant)
+    "ໃ": "ai",     # AI
+    "ໄ": "ai",     # AI (alternative)
+    # Tone marks (omitted in romanization)
+    "່": "",       # mai ek (tone 1)
+    "້": "",       # mai tho (tone 2)
+    "໊": "",       # mai ti (tone 3)
+    "໋": "",       # mai chatawa (tone 4)
+    # Other marks
+    "໌": "",       # cancellation mark (thanthakhat)
+    "ໍ": "o",      # mai noi
+    "ໆ": "",       # repetition mark
+    "ຯ": "...",    # ellipsis
+    # Digits
+    "໐": "0",
+    "໑": "1",
+    "໒": "2",
+    "໓": "3",
+    "໔": "4",
+    "໕": "5",
+    "໖": "6",
+    "໗": "7",
+    "໘": "8",
+    "໙": "9",
+    # Special combinations
+    "ໜ": "n",     # HO NO
+    "ໝ": "m",     # HO MO
+})
+
 
 def lao2thai_script(text: str) -> str:
     """
@@ -230,8 +321,10 @@ def transliterate(lao_word: str, engine: str = "anyascii") -> str:
     Lao transliterate
 
     :param str sent: Lao text
-    :param str engine: engine. Now, LaoNLP support anyascii only.
+    :param str engine: engine. Supported engines: 'anyascii', 'moh2020'
     :return: returns a Lao transliteration.
     :rtype: str
     """
+    if engine == "moh2020":
+        return lao_word.translate(lao2moh2020)
     return lao_word.translate(lao2ascii)
