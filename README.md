@@ -11,6 +11,7 @@ Lao language Natural Language Processing toolkit
 ## Features
 
 - Word tokenizer
+- Syllable tokenizer
 - Sentence tokenizer
 - Part-of-speech
 - Lao to Thai script

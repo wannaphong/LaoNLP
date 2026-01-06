@@ -15,8 +15,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 from laonlp.tokenize.core import word_tokenize, sent_tokenize
+from laonlp.tokenize.syllable import syllable_tokenize
 
 __all__ = [
     "word_tokenize",
     "sent_tokenize",
+    "syllable_tokenize",
 ]
