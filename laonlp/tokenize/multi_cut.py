@@ -16,11 +16,16 @@ limitations under the License.
 
 Multi cut -- Lao word segmentation with maximum matching.
 Forked from PyThaiNLP's multi_cut.py
+
+Note: This module depends on pythainlp.util.Trie which is a required 
+dependency of LaoNLP (pythainlp>=3.0.0 in requirements.txt).
 """
 
 import re
 from collections import defaultdict
 from typing import Iterator, List
+
+# Import Trie from PyThaiNLP - this is a core dependency of LaoNLP
 from pythainlp.util import Trie
 
 
@@ -49,9 +54,12 @@ _RE_NONLAO = r"""(?x)
 """
 _PAT_NONLAO = re.compile(_RE_NONLAO)
 
-_TEXT_LIMIT = 120
-_TEXT_SCAN_LEFT = 20
-_TEXT_SCAN_RIGHT = 20
+# Constants for safe mode text chunking to prevent infinite loops
+# These values are based on PyThaiNLP PR #302 which fixes the hanging issue
+# with long texts containing many ambiguous tokenization points
+_TEXT_LIMIT = 120  # Base chunk size for splitting long text
+_TEXT_SCAN_LEFT = 20  # Look-back window to find optimal split point
+_TEXT_SCAN_RIGHT = 20  # Look-ahead window to find optimal split point
 
 
 def _multicut(
@@ -110,7 +118,7 @@ def _multicut(
 
 def mmcut(text: str, custom_dict: Trie) -> List[str]:
     """
-    Minimal matching word segmentation.
+    Maximum matching word segmentation.
     
     :param text: text to be tokenized
     :type text: str
