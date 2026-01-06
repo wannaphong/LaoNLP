@@ -10,3 +10,4 @@ Modules
 .. autofunction:: lao_digit_to_arabic_digit
 .. autofunction:: num_to_laoword
 .. autofunction:: remove_tone_mark
+.. autofunction:: split_graphemes
