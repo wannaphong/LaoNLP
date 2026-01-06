@@ -16,18 +16,20 @@ limitations under the License.
 """
 import re
 from typing import List
-from pythainlp.tokenize import Tokenizer
+from pythainlp.util import Trie
 from laonlp.corpus import lao_words
+from laonlp.tokenize.multi_cut import segment
 
-_word = Tokenizer(lao_words(), engine="mm")
+_word_dict_trie = Trie(lao_words())
 _RE_sent = re.compile(r"(?<=\.)(?!(?:\.|$))")
 
 
-def word_tokenize(sent: str) -> List[str]:
+def word_tokenize(sent: str, safe_mode: bool = True) -> List[str]:
     """
     Lao word tokenize
 
     :param str sent: lao text
+    :param bool safe_mode: True to avoid long wait for long continuous text (edge case); Default is True
     :return: returns a list of lao words
     :rtype: list
 
@@ -39,7 +41,7 @@ def word_tokenize(sent: str) -> List[str]:
         txt= "ພາສາລາວໃນປັດຈຸບັນ."
         print(word_tokenize(txt)) # ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']
     """
-    return _word.word_tokenize(sent)
+    return segment(sent, custom_dict=_word_dict_trie, safe_mode=safe_mode)
 
 
 def sent_tokenize(txt: str) -> List[str]:
