@@ -37,7 +37,7 @@ x0_5 = "ໃ"  # VOWEL SIGN AY
 
 x1 = "ຫ"  # HO SUNG (for forming aspirated consonants)
 x = f"[{CONSONANTS}]"  # Core consonant
-x2 = "[\u0EBC\u0EA3\u0EA7\u0EA5]"  # Semivowels: LO, RO, WO, LO
+x2 = "[\u0EBC\u0EA3\u0EA7\u0EA5]"  # Semivowels: SEMIVOWEL SIGN LO, RO, WO, LO (different LO characters)
 x3 = "[\u0EB8\u0EB9]"  # VOWEL SIGN U, UU
 x4_12 = "[\u0EB4\u0EB5]"  # VOWEL SIGN I, II
 x4_34 = "[\u0EB6\u0EB7]"  # VOWEL SIGN Y, YY
@@ -121,9 +121,6 @@ _syllable_pattern = f"{_re_basic}(?=[{x0_1}{x0_2}{x0_3}{x0_4}{x0_5}{x1}]|\\s|[^\
 
 # Compile the regex
 SYLLABLE_REGEX = re.compile(_syllable_pattern)
-
-# Simple syllable regex for validation (without lookahead)
-SIMPLE_SYLLABLE_REGEX = re.compile(_re_basic)
 
 
 def normalize_tone_marks(text: str) -> str:
