@@ -176,6 +176,138 @@ lao2ascii = str.maketrans({
     "ༀ": "Om",
 })
 
+# Ministry of Health 2020 Romanization System
+# Based on the standardized romanization used in Lao health documentation
+# Reference: https://laoconverter.info/moh2020.html
+lao2moh2020 = str.maketrans({
+    # Consonants
+    "ກ": "k",      # KO
+    "ຂ": "kh",     # KHO KHAI
+    "ຄ": "kh",     # KHO KHUAI
+    "ຆ": "kh",     # (rare)
+    "ງ": "ng",     # NGO
+    "ຈ": "ch",     # CHO
+    "ຉ": "ch",     # (rare)
+    "ຊ": "s",      # SO (palatalized)
+    "ຌ": "ny",     # (rare)
+    "ຍ": "y",      # NYO
+    "ຎ": "d",      # (rare Sanskrit)
+    "ຏ": "t",      # (rare Sanskrit)
+    "ຐ": "th",     # (rare Sanskrit)
+    "ຑ": "th",     # (rare Sanskrit)
+    "ຒ": "th",     # (rare Sanskrit)
+    "ຓ": "n",      # (rare Sanskrit)
+    "ດ": "d",      # DO
+    "ຕ": "t",      # TO
+    "ຖ": "th",     # THO THUNG
+    "ທ": "th",     # THO THONG
+    "ຘ": "th",     # (rare)
+    "ນ": "n",      # NO
+    "ບ": "b",      # BO
+    "ປ": "p",      # PO
+    "ຜ": "ph",     # PHO PHUNG
+    "ຝ": "f",      # FO FA
+    "ພ": "ph",     # PHO PHEUNG
+    "ຟ": "f",      # FO FAI
+    "ຠ": "ph",     # (rare)
+    "ມ": "m",      # MO
+    "ຢ": "y",      # YO
+    "ຣ": "r",      # RO
+    "ລ": "l",      # LO
+    "ວ": "v",      # VO/WO
+    "ຨ": "s",      # (rare Sanskrit)
+    "ຩ": "s",      # (rare Sanskrit)
+    "ສ": "s",      # SO
+    "ຫ": "h",      # HO
+    "ຬ": "l",      # (rare Sanskrit)
+    "ອ": "o",      # O
+    "ຮ": "h",      # HO (final)
+    # Vowels and vowel signs
+    "ະ": "a",      # short A
+    "ັ": "a",      # mai kan (short A above)
+    "າ": "a",      # long AA
+    "ຳ": "am",     # AM
+    "ິ": "i",      # short I
+    "ີ": "i",      # long II
+    "ຶ": "ue",     # short UE
+    "ື": "ue",     # long UEE
+    "ຸ": "u",      # short U
+    "ູ": "u",      # long UU
+    "ົ": "o",      # mai kong
+    "ຼ": "l",      # semivowel L
+    "ຽ": "ia",     # IA
+    "ເ": "e",      # E (before consonant)
+    "ແ": "ae",     # AE (before consonant)
+    "ໂ": "o",      # O (before consonant)
+    "ໃ": "ai",     # AI
+    "ໄ": "ai",     # AI (alternative)
+    # Tone marks (omitted in romanization)
+    "່": "",       # mai ek (tone 1)
+    "້": "",       # mai tho (tone 2)
+    "໊": "",       # mai ti (tone 3)
+    "໋": "",       # mai chatawa (tone 4)
+    # Other marks
+    "໌": "",       # cancellation mark (thanthakhat)
+    "ໍ": "o",      # mai noi
+    "ໆ": "",       # repetition mark
+    "ຯ": "...",    # ellipsis
+    # Digits
+    "໐": "0",
+    "໑": "1",
+    "໒": "2",
+    "໓": "3",
+    "໔": "4",
+    "໕": "5",
+    "໖": "6",
+    "໗": "7",
+    "໘": "8",
+    "໙": "9",
+    # Special combinations
+    "ໜ": "n",     # HO NO
+    "ໝ": "m",     # HO MO
+})
+
+
+def _apply_moh2020_rules(text: str, lao_text: str) -> str:
+    """
+    Apply MOH 2020-specific romanization rules.
+    
+    :param str text: Romanized text from character mapping
+    :param str lao_text: Original Lao text
+    :return: Text with MOH 2020 rules applied
+    :rtype: str
+    """
+    import re
+    
+    # Rule 1: Silent ຫ (h) before certain consonants (w, y, l, r, n, m)
+    # Must apply before vowel reordering
+    # Special case: ຫວ (hv from mapping) stays 'v'
+    # Other silent h cases
+    text = re.sub(r'h([vylrnm])', r'\1', text)
+    
+    # Rule 2: Final consonant changes (before vowel reordering)
+    # 'd' at end -> 't' (only when part of a multi-character syllable)
+    text = re.sub(r'(?<=.)d\b', 't', text)
+    text = re.sub(r'(?<=.)d(?=\s)', 't', text)
+    
+    # Rule 3: 'v' at true end of word -> 'o'
+    # "lav" -> "lao", but "van" stays "van" unless at word end
+    text = re.sub(r'(?<=.)v\b', 'o', text)
+    
+    # Rule 4: Reorder vowel 'e' that comes before consonants
+    # In Lao, ເ appears before the consonant, but romanizes after it
+    # Pattern: e + consonant_cluster -> consonant_cluster + e
+    # Only apply when 'e' is truly misplaced (at start of word/text)
+    # "ekht" -> "khet", but don't change "khet" 
+    
+    # Use word boundary: \b ensures we're at the start of a word
+    # Match: word_boundary + e + consonants + more_consonants
+    text = re.sub(r'\be([bcdghklmnprsty]{1,2})([bcdghklmnprsty])', r'\1e\2', text)
+    # Match: word_boundary + e + consonants + (end)
+    text = re.sub(r'\be([bcdghklmnprsty]{1,2})\b', r'\1e', text)
+    
+    return text
+
 
 def lao2thai_script(text: str) -> str:
     """
@@ -229,9 +361,12 @@ def transliterate(lao_word: str, engine: str = "anyascii") -> str:
     """
     Lao transliterate
 
-    :param str sent: Lao text
-    :param str engine: engine. Now, LaoNLP support anyascii only.
+    :param str lao_word: Lao text
+    :param str engine: engine. Supported engines: 'anyascii', 'moh2020'
     :return: returns a Lao transliteration.
     :rtype: str
     """
+    if engine == "moh2020":
+        result = lao_word.translate(lao2moh2020)
+        return _apply_moh2020_rules(result, lao_word)
     return lao_word.translate(lao2ascii)
