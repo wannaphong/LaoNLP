@@ -19,6 +19,7 @@ __all__ = [
     "arabic_digit_to_lao_digit",
     "num_to_laoword",
     "remove_tone_mark",
+    "split_graphemes",
 ]
 from laonlp.util.digitconv import (
     lao_digit_to_arabic_digit,
@@ -26,5 +27,6 @@ from laonlp.util.digitconv import (
     num_to_laoword,
 )
 from laonlp.util.lao import (
-    remove_tone_mark
+    remove_tone_mark,
+    split_graphemes
 )
