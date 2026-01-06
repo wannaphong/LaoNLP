@@ -54,6 +54,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#laonlp.util.lao_digit_to_arabic_digit"><code class="docutils literal notranslate"><span class="pre">lao_digit_to_arabic_digit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#laonlp.util.num_to_laoword"><code class="docutils literal notranslate"><span class="pre">num_to_laoword()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#laonlp.util.remove_tone_mark"><code class="docutils literal notranslate"><span class="pre">remove_tone_mark()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laonlp.util.split_graphemes"><code class="docutils literal notranslate"><span class="pre">split_graphemes()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -155,6 +156,37 @@
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="laonlp.util.split_graphemes">
+<span class="sig-prename descclassname"><span class="pre">laonlp.util.</span></span><span class="sig-name descname"><span class="pre">split_graphemes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#laonlp.util.split_graphemes" title="Link to this definition"></a></dt>
+<dd><p>Split Lao text into grapheme clusters.</p>
+<p>A grapheme cluster consists of a base character followed by any
+combining marks (such as tone marks and combining vowels).
+This ensures that characters with tone marks are not split apart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – lao text</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns a list of grapheme clusters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">laonlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">split_graphemes</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ຜູ້&quot;</span>  <span class="c1"># person with tone mark</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ຜູ້&#39;]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ກ່ອນ&quot;</span>  <span class="c1"># before with tone mark</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ກ່&#39;, &#39;ອ&#39;, &#39;ນ&#39;]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
