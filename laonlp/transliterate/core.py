@@ -320,7 +320,7 @@ def transliterate(lao_word: str, engine: str = "anyascii") -> str:
     """
     Lao transliterate
 
-    :param str sent: Lao text
+    :param str lao_word: Lao text
     :param str engine: engine. Supported engines: 'anyascii', 'moh2020'
     :return: returns a Lao transliteration.
     :rtype: str
