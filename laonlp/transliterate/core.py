@@ -383,7 +383,6 @@ lao2ipa = str.maketrans({
     "ຟ": "f",       # FO FAI
     "ມ": "m",       # MO
     "ຢ": "j",       # YO
-    "ຍ": "ɲ",       # NYO (palatal nasal)
     "ຣ": "r",       # RO
     "ລ": "l",       # LO
     "ວ": "ʋ",       # VO/WO (labiodental approximant)
