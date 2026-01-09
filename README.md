@@ -16,6 +16,7 @@ Lao language Natural Language Processing toolkit
 - Part-of-speech
 - Lao to Thai script
 - Thai to Lao script
+- Romanization (AnyASCII, MOH 2020, IPA)
 - Word dictionary
 - Word Vector
 - Split Lao text into grapheme clusters (characters with tone marks)

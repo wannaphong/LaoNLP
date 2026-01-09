@@ -357,16 +357,96 @@ def thai2lao_script(text: str) -> str:
     return new_text
 
 
+# IPA (International Phonetic Alphabet) Romanization
+# Based on Lingua::LO::NLP::Romanize::IPA
+# Reference: https://github.com/mbethke/Lingua-LO-NLP
+lao2ipa = str.maketrans({
+    # Consonants
+    "ກ": "k",       # KO
+    "ຂ": "kʰ",      # KHO KHAI (aspirated)
+    "ຄ": "kʰ",      # KHO KHUAI (aspirated)
+    "ງ": "ŋ",       # NGO (velar nasal)
+    "ຈ": "tɕ",      # CHO (voiceless alveolo-palatal affricate)
+    "ຊ": "s",       # SO (sibilant)
+    "ສ": "s",       # SO
+    "ຍ": "ɲ",       # NYO (palatal nasal)
+    "ດ": "d",       # DO (becomes 't' in final position)
+    "ຕ": "t",       # TO
+    "ຖ": "tʰ",      # THO THUNG (aspirated)
+    "ທ": "tʰ",      # THO THONG (aspirated)
+    "ນ": "n",       # NO
+    "ບ": "b",       # BO (becomes 'p' in final position)
+    "ປ": "p",       # PO
+    "ຜ": "pʰ",      # PHO PHUNG (aspirated)
+    "ຝ": "f",       # FO FA
+    "ພ": "pʰ",      # PHO PHEUNG (aspirated)
+    "ຟ": "f",       # FO FAI
+    "ມ": "m",       # MO
+    "ຢ": "j",       # YO
+    "ຣ": "r",       # RO
+    "ລ": "l",       # LO
+    "ວ": "ʋ",       # VO/WO (labiodental approximant)
+    "ຫ": "h",       # HO
+    "ອ": "ʔ",       # O (glottal stop)
+    "ຮ": "h",       # HO (final)
+    # Vowels and vowel signs
+    "ະ": "aʔ",      # short A with glottal stop
+    "ັ": "a",       # mai kan (short A)
+    "າ": "aː",      # long AA (length marker)
+    "ຳ": "am",      # AM
+    "ິ": "i",       # short I
+    "ີ": "iː",      # long II
+    "ຶ": "ɯ",       # short UE (close central unrounded)
+    "ື": "ɯː",      # long UEE
+    "ຸ": "u",       # short U
+    "ູ": "uː",      # long UU
+    "ົ": "o",       # mai kong
+    "ຼ": "l",       # semivowel L
+    "ຽ": "iːə",     # IA (diphthong)
+    "ເ": "eː",      # E (before consonant)
+    "ແ": "ɛː",      # AE (open-mid front unrounded)
+    "ໂ": "oː",      # O (before consonant)
+    "ໃ": "aj",      # AI
+    "ໄ": "aj",      # AI (alternative)
+    # Tone marks (preserved in IPA for tonal information)
+    "່": "",        # mai ek (tone 1) - omitted in basic IPA
+    "້": "",        # mai tho (tone 2) - omitted in basic IPA
+    "໊": "",        # mai ti (tone 3) - omitted in basic IPA
+    "໋": "",        # mai chatawa (tone 4) - omitted in basic IPA
+    # Other marks
+    "໌": "",        # cancellation mark
+    "ໍ": "ɔː",      # mai noi (open-mid back rounded with length)
+    "ໆ": "",        # repetition mark
+    "ຯ": "...",     # ellipsis
+    # Digits
+    "໐": "0",
+    "໑": "1",
+    "໒": "2",
+    "໓": "3",
+    "໔": "4",
+    "໕": "5",
+    "໖": "6",
+    "໗": "7",
+    "໘": "8",
+    "໙": "9",
+    # Special combinations
+    "ໜ": "n",      # HO NO
+    "ໝ": "m",      # HO MO
+})
+
+
 def transliterate(lao_word: str, engine: str = "anyascii") -> str:
     """
     Lao transliterate
 
     :param str lao_word: Lao text
-    :param str engine: engine. Supported engines: 'anyascii', 'moh2020'
+    :param str engine: engine. Supported engines: 'anyascii', 'moh2020', 'ipa'
     :return: returns a Lao transliteration.
     :rtype: str
     """
     if engine == "moh2020":
         result = lao_word.translate(lao2moh2020)
         return _apply_moh2020_rules(result, lao_word)
+    elif engine == "ipa":
+        return lao_word.translate(lao2ipa)
     return lao_word.translate(lao2ascii)
