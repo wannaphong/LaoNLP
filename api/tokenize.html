@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>laonlp.tokenize &mdash; LaoNLP  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -110,8 +110,8 @@
 </dl>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">laonlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
 
-<span class="n">txt</span><span class="o">=</span> <span class="s2">&quot;ພາສາລາວໃນປັດຈຸບັນ.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">txt</span><span class="p">))</span> <span class="c1"># [&#39;ພາສາລາວ&#39;, &#39;ໃນ&#39;, &#39;ປັດຈຸບັນ&#39;, &#39;.&#39;]</span>
+<span class="n">txt</span><span class="o">=</span> <span class="s2">"ພາສາລາວໃນປັດຈຸບັນ."</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">txt</span><span class="p">))</span> <span class="c1"># ['ພາສາລາວ', 'ໃນ', 'ປັດຈຸບັນ', '.']</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -159,11 +159,11 @@ into syllables, based on the one described in PHISSAMAY et al:
 </dl>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">laonlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">syllable_tokenize</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ສະບາຍດີ&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ສະ&#39;, &#39;ບາຍ&#39;, &#39;ດີ&#39;]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ສະບາຍດີ"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># ['ສະ', 'ບາຍ', 'ດີ']</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ພາສາລາວໃນປັດຈຸບັນ&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ພາ&#39;, &#39;ສາ&#39;, &#39;ລາວ&#39;, &#39;ໃນ&#39;, &#39;ປັດ&#39;, &#39;ຈຸ&#39;, &#39;ບັນ&#39;]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ພາສາລາວໃນປັດຈຸບັນ"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># ['ພາ', 'ສາ', 'ລາວ', 'ໃນ', 'ປັດ', 'ຈຸ', 'ບັນ']</span>
 </pre></div>
 </div>
 </dd></dl>

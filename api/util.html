@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>laonlp.util &mdash; LaoNLP  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -180,11 +180,11 @@ This ensures that characters with tone marks are not split apart.</p>
 </dl>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">laonlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">split_graphemes</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ຜູ້&quot;</span>  <span class="c1"># person with tone mark</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ຜູ້&#39;]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ຜູ້"</span>  <span class="c1"># person with tone mark</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># ['ຜູ້']</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ກ່ອນ&quot;</span>  <span class="c1"># before with tone mark</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># [&#39;ກ່&#39;, &#39;ອ&#39;, &#39;ນ&#39;]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ກ່ອນ"</span>  <span class="c1"># before with tone mark</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_graphemes</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># ['ກ່', 'ອ', 'ນ']</span>
 </pre></div>
 </div>
 </dd></dl>
