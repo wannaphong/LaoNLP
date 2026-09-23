@@ -68,3 +68,62 @@ class TestTransliteratePackage(unittest.TestCase):
         self.assertEqual(transliterate("ກ້", "moh2020"), "k")
         self.assertEqual(transliterate("ກ໊", "moh2020"), "k")
         self.assertEqual(transliterate("ກ໋", "moh2020"), "k")
+
+    def test_transliterate_ipa(self):
+        # Test IPA romanization with basic examples
+        # "ສະບາຍດີ" (hello) should romanize to IPA
+        self.assertIsNotNone(transliterate("ສະບາຍດີ", "ipa"))
+        
+    def test_transliterate_ipa_consonants(self):
+        # Test IPA consonant mappings
+        self.assertEqual(transliterate("ກ", "ipa"), "k")
+        self.assertEqual(transliterate("ຂ", "ipa"), "kʰ")  # aspirated
+        self.assertEqual(transliterate("ງ", "ipa"), "ŋ")   # velar nasal
+        self.assertEqual(transliterate("ຈ", "ipa"), "tɕ")  # voiceless alveolo-palatal affricate
+        self.assertEqual(transliterate("ດ", "ipa"), "d")
+        self.assertEqual(transliterate("ຕ", "ipa"), "t")
+        self.assertEqual(transliterate("ທ", "ipa"), "tʰ")  # aspirated
+        self.assertEqual(transliterate("ນ", "ipa"), "n")
+        self.assertEqual(transliterate("ບ", "ipa"), "b")
+        self.assertEqual(transliterate("ປ", "ipa"), "p")
+        self.assertEqual(transliterate("ຜ", "ipa"), "pʰ")  # aspirated
+        self.assertEqual(transliterate("ຝ", "ipa"), "f")
+        self.assertEqual(transliterate("ພ", "ipa"), "pʰ")  # aspirated
+        self.assertEqual(transliterate("ມ", "ipa"), "m")
+        self.assertEqual(transliterate("ຢ", "ipa"), "j")
+        self.assertEqual(transliterate("ຍ", "ipa"), "ɲ")   # palatal nasal
+        self.assertEqual(transliterate("ລ", "ipa"), "l")
+        self.assertEqual(transliterate("ວ", "ipa"), "ʋ")   # labiodental approximant
+        self.assertEqual(transliterate("ສ", "ipa"), "s")
+        self.assertEqual(transliterate("ຫ", "ipa"), "h")
+        self.assertEqual(transliterate("ອ", "ipa"), "ʔ")   # glottal stop
+        self.assertEqual(transliterate("ຮ", "ipa"), "h")
+        
+    def test_transliterate_ipa_vowels(self):
+        # Test IPA vowel mappings
+        self.assertEqual(transliterate("ະ", "ipa"), "aʔ")  # short a with glottal stop
+        self.assertEqual(transliterate("ັ", "ipa"), "a")
+        self.assertEqual(transliterate("າ", "ipa"), "aː")  # long a
+        self.assertEqual(transliterate("ິ", "ipa"), "i")
+        self.assertEqual(transliterate("ີ", "ipa"), "iː")  # long i
+        self.assertEqual(transliterate("ຶ", "ipa"), "ɯ")   # close central unrounded
+        self.assertEqual(transliterate("ື", "ipa"), "ɯː")  # long ue
+        self.assertEqual(transliterate("ຸ", "ipa"), "u")
+        self.assertEqual(transliterate("ູ", "ipa"), "uː")  # long u
+        self.assertEqual(transliterate("ເ", "ipa"), "eː")
+        self.assertEqual(transliterate("ແ", "ipa"), "ɛː")  # open-mid front unrounded
+        self.assertEqual(transliterate("ໂ", "ipa"), "oː")
+        self.assertEqual(transliterate("ໃ", "ipa"), "aj")
+        self.assertEqual(transliterate("ໄ", "ipa"), "aj")
+        self.assertEqual(transliterate("ໍ", "ipa"), "ɔː")  # open-mid back rounded
+        
+    def test_transliterate_ipa_digits(self):
+        # Test digit mappings in IPA (same as Arabic numerals)
+        self.assertEqual(transliterate("໐໑໒໓໔໕໖໗໘໙", "ipa"), "0123456789")
+        
+    def test_transliterate_ipa_tone_marks(self):
+        # Test that tone marks are removed in basic IPA
+        self.assertEqual(transliterate("ກ່", "ipa"), "k")
+        self.assertEqual(transliterate("ກ້", "ipa"), "k")
+        self.assertEqual(transliterate("ກ໊", "ipa"), "k")
+        self.assertEqual(transliterate("ກ໋", "ipa"), "k")
